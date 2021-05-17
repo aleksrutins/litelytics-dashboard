@@ -1,9 +1,0 @@
-{
-  "name": "litelytics-dashboard",
-  "version": "1.0.0",
-  "description": "A dashboard for Litelytics",
-  "main": " ",
-  "repository": "https://github.com/aleksrutins/litelytics-dashboard.git",
-  "author": "Aleks Rutins <aleks@rutins.com>",
-  "license": "BSD-2-Clause"
-}
