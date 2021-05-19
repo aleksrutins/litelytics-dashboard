@@ -1,0 +1,13 @@
+table, tr, td, th {
+    padding: 5px;
+}
+td, th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+table {
+    box-sizing: border-box;
+    width: 100%;
+    table-layout: fixed;
+}

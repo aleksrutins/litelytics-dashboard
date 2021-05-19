@@ -9,3 +9,6 @@ body {
     flex-wrap: wrap;
     justify-content: start;
 }
+[hidden] {
+    display: none !important;
+}

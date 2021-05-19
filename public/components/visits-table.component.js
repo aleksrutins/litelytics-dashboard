@@ -1,8 +1,9 @@
 import {TemplateElement} from 'https://cdn.skypack.dev/template-element';
 import x from 'https://cdn.skypack.dev/hyperaxe';
 const {tr, td} = x;
-
+const cell = (text) => td({title: text}, text);
 customElements.define('visits-table', class extends TemplateElement {
+    externalStyles = ['/assets/visits-table.css'];
     constructor() {
         super();
         this.addElementProperty('siteData', 'table > tbody');
@@ -30,11 +31,11 @@ customElements.define('visits-table', class extends TemplateElement {
         for(let visit of visits) {
             this.siteData.appendChild(
                 tr(
-                    td(visit.useragent),
-                    td(visit.path),
-                    td(visit.referer),
-                    td(visit.timestamp),
-                    td(visit.ip)
+                    cell(visit.useragent),
+                    cell(visit.path),
+                    cell(visit.referer),
+                    cell(new Date(visit.timestamp).toLocaleString()),
+                    cell(visit.ip)
                 )
             );
         }
