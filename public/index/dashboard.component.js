@@ -35,7 +35,7 @@ export default class DashboardPage extends TemplateElement {
         this.addElementProperty('mainContent', '#mainContent');
         this.addElementProperty('siteView', '#siteView');
     }
-    async loadSiteData(e) {
+    loadSiteData = async (e) => {
         this.mainContent.setAttribute('hidden', 'true');
         this.siteView.removeAttribute('hidden');
         const site = await auth.getSiteData(e.target.getAttribute('data-site-id'));
