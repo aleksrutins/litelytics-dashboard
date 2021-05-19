@@ -3,3 +3,9 @@ body {
     --button-padding: 10px 30px;
     --border-radius: 7px;
 }
+#siteList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
