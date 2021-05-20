@@ -10,6 +10,7 @@ export default class DashboardPage extends TemplateElement {
 <div>
     <div id="header">
         <h1 id="title">Litelytics Dashboard</h1>
+        <button hidden primary @click="addUser" id="addUserBtn">+ Add User</button>
     </div>
     <div id="mainContent" class="view">
         <div id="siteList">
@@ -27,6 +28,7 @@ export default class DashboardPage extends TemplateElement {
         this.addElementProperty('mainContent', '#mainContent');
         this.addElementProperty('siteView', '#siteView');
         this.addElementProperty('pageTitle', '#title');
+        this.addElementProperty('addUserBtn', '#addUserBtn');
     }
     loadSiteData = async (domain, siteId) => {
         this.pageTitle.textContent = domain;
@@ -48,6 +50,9 @@ export default class DashboardPage extends TemplateElement {
             siteView.loadDataCallback = this.loadSiteData;
             this.siteList.appendChild(siteView);
         }
+    }
+    async addUser() {
+        
     }
 }
 customElements.define('dashboard-page', DashboardPage);
