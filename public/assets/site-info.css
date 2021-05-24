@@ -2,7 +2,6 @@ div {
     border-radius: 15px;
     padding: 20px;
     border: 1px solid black;
-    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: start;
