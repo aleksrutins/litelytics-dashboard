@@ -1,5 +1,5 @@
 div {
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 20px;
     border: 1px solid black;
     margin: 20px;
@@ -10,8 +10,8 @@ div {
 }
 
 h1 {
-    font-size: medium;
-    font-weight: bold;
+    font-size: large;
+    font-weight: 300;
     margin: 0;
     margin-bottom: 10px;
 }
