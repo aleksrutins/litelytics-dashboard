@@ -8,6 +8,7 @@ button {
     border: 1px solid #3b8070;
     padding: 4px 15px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 h1 {
     font-weight: 300;
@@ -39,5 +40,18 @@ button:hover {
     justify-content: start;
 }
 [hidden] {
+    display: none !important;
+}
+dialog[open] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 10px black;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 20px;
+}
+dialog:not([open]) {
     display: none !important;
 }

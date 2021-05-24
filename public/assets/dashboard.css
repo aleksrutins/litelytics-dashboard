@@ -6,11 +6,17 @@
     margin: 20px;
     border-radius: 15px;
     border: 1px solid black;
-    padding: 6px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+}
+#header button {
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 0;
+    border: none;
 }
 #siteList {
     margin-left: 20px;
