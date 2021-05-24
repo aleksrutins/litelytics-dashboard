@@ -1,5 +1,6 @@
 import {TemplateElement} from 'https://cdn.skypack.dev/template-element';
 import x from 'https://cdn.skypack.dev/hyperaxe';
+const pug = require('pug');
 const {tr, td} = x;
 const cell = (text) => td({title: text}, text);
 customElements.define('visits-table', class extends TemplateElement {
@@ -8,24 +9,20 @@ customElements.define('visits-table', class extends TemplateElement {
         super();
         this.addElementProperty('siteData', 'table > tbody');
     }
-    template = `
-<table>
-    <thead>
-        <tr>
-            <th>User-Agent</th>
-            <th>Path</th>
-            <th>Referer</th>
-            <th>Timestamp</th>
-            <th>IP Address</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Loading...</td>
-        </tr>
-    </tbody>
-</table>
-    `;
+    template = pug.render(`
+div.container
+    table.styled-table
+        thead
+            tr.header
+                th User-Agent
+                th Path
+                th Referer
+                th Timestamp
+                th IP
+        tbody
+            tr
+                td Loading...
+    `);
     loadData(visits) {
         this.siteData.innerHTML = '';
         for(let visit of visits) {

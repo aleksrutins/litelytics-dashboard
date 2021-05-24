@@ -2,9 +2,13 @@
     text-align: center;
 }
 #header {
-    background-color: rgba(255, 255, 255, 0.9);
-    position: sticky;
-    margin: 0;
-    top: 0;
-    backdrop-filter: blur(6px);
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

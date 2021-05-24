@@ -1,26 +1,25 @@
 import { TemplateElement } from 'https://cdn.skypack.dev/template-element';
 import x from 'https://cdn.skypack.dev/hyperaxe';
 import { auth } from 'https://cdn.skypack.dev/litelytics-client';
+const pug = require('pug');
 
 auth.setAuth(localStorage.token, localStorage.userId);
 auth.setInstance(localStorage.instanceUrl);
 export default class DashboardPage extends TemplateElement {
-    externalStyles = ['https://cdn.skypack.dev/your.css', '/assets/app.css', '/assets/dashboard.css'];
-    template = `
-<div>
-    <div id="header">
-        <h1 id="title">Litelytics Dashboard</h1>
-        <button hidden primary @click="addUser" id="addUserBtn">+ Add User</button>
-    </div>
-    <div id="mainContent" class="view">
-        <div id="siteList">
-        </div>
-    </div>
-    <div id="siteView" class="view" hidden>
-        <visits-table id="siteData"></visits-table>
-    </div>
-</div>
-    `
+    externalStyles = ['/assets/app.css', '/assets/dashboard.css'];
+    template = pug.render(`
+div
+    div#header
+        button(@click="backToList") Back
+        h1#title Litelytics Dashboard
+        div
+            button#addUserBtn(hidden primary) + Add User
+            button(@click="logOut") Log Out
+    div.view#mainContent
+        div#siteList
+    div.view#siteView(hidden)
+        visits-table#siteData
+    `)
     constructor() {
         super();
         this.addElementProperty('siteList', '#siteList');
@@ -53,6 +52,14 @@ export default class DashboardPage extends TemplateElement {
     }
     async addUser() {
         
+    }
+    backToList() {
+        location.reload();
+    }
+    logOut() {
+        delete localStorage.token;
+        delete localStorage.userId;
+        location.reload();
     }
 }
 customElements.define('dashboard-page', DashboardPage);

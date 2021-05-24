@@ -1,13 +1,41 @@
-table, tr, td, th {
-    padding: 5px;
+table {
+    border-collapse: collapse;
+    margin: 25px 20px;
+    font-size: 0.9em;
+    border-radius: 15px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px black;
 }
-td, th {
+table thead tr {
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+tbody::-webkit-scrollbar {
+    width: 0;
+}
+table th,
+table td {
+    padding: 12px 15px;
+}
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+  
+  thead, tbody, tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  tbody {
+    display: block;
+    overflow: auto;
+    table-layout: fixed;
+    max-height: 600px;
+  }
+
+td {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-table {
-    box-sizing: border-box;
-    width: 100%;
-    table-layout: fixed;
 }

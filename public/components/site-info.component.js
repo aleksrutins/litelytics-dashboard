@@ -1,7 +1,7 @@
 import { TemplateElement } from 'https://cdn.skypack.dev/template-element';
 
 customElements.define('site-info', class extends TemplateElement {
-    externalStyles = ['https://cdn.skypack.dev/your.css', '/assets/app.css', '/assets/site-info.css'];
+    externalStyles = ['/assets/app.css', '/assets/site-info.css'];
     constructor() {
         super();
         this.addObservable('domain');

@@ -2,7 +2,7 @@ import {TemplateElement} from 'https://cdn.skypack.dev/template-element';
 import { auth } from 'https://cdn.skypack.dev/litelytics-client';
 
 export default class LoginPage extends TemplateElement {
-    externalStyles = ['https://cdn.skypack.dev/your.css', '/assets/app.css'];
+    externalStyles = ['/assets/app.css'];
     template = `
 <container flex-center text-center><div>
     <ll-logo></ll-logo>
