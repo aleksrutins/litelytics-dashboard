@@ -22,3 +22,8 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+#siteView {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

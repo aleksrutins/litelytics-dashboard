@@ -31,7 +31,7 @@ table tbody tr {
     display: block;
     overflow: auto;
     table-layout: fixed;
-    max-height: 600px;
+    height: 300px;
   }
 
 td {
